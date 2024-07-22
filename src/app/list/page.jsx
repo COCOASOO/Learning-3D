@@ -1,9 +1,9 @@
 'use client'
 import React, { useState } from 'react';
-import SearchForm from '../components/SearchForm';
-import PlaylistForm from '../components/PlaylistForm';
-import VideoList from '../components/VideoList';
-import SelectedVideosList from '../components/SelectedVideosList';
+import SearchForm from '../../components/SearchForm';
+import PlaylistForm from '../../components/PlaylistForm';
+import VideoList from '../../components/VideoList';
+import SelectedVideosList from '../../components/SelectedVideosList';
 import { searchVideos, getPlaylistVideos } from '../../services/youtube';
 
 export default function List() {

@@ -3,7 +3,8 @@ import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
-} from "@/app/components/ui/resizable";
+} from "@/components/ui/resizable";
+import Header from "@/components/Header";
 
 export default function Home() {
   return (
@@ -13,13 +14,13 @@ export default function Home() {
       className="min-h-screen min-w-screen"
     >
       <ResizablePanel defaultSize={8}>
-        <div className="flex h-full items-center justify-center p-6 ">
-          <span className="font-semibold">Header</span>
+        <div className="flex h-full">
+          <Header/>
         </div>
       </ResizablePanel>
       <ResizableHandle />
       <ResizablePanel defaultSize={92}>
-        <div className="flex h-full items-center justify-center p-6 ">
+        <div className="flex h-full">
           <span className="font-semibold">Content</span>
         </div>
       </ResizablePanel>
