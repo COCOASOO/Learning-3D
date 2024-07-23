@@ -25,6 +25,7 @@ export default function Login() {
     } else {
       console.log("Inicio de sesión exitoso");
       router.push("/profile"); 
+      router.refresh();
     }
   });
 
