@@ -50,7 +50,41 @@ export const authOptions = {
   ],
   pages: {
     signIn: "/auth/login",
-  }
+  },
+  callbacks: {
+    async signIn({ user, account, profile, email, credentials }) {
+      if (account.provider === "google") {
+        // Check if user exists in the database
+        let userFound = await prisma.user.findUnique({
+          where: { email: user.email },
+        });
+
+        // If user doesn't exist, create it
+        if (!userFound) {
+          userFound = await prisma.user.create({
+            data: {
+              email: user.email,
+              username: user.name,
+            },
+          });
+        }
+
+        // Continue with sign-in
+        return true;
+      }
+      return true; // Do different verification for other providers that you might have
+    },
+    async session({ session, user, token }) {
+      session.user.id = token.id;
+      return session;
+    },
+    async jwt({ token, user, account, profile, isNewUser }) {
+      if (user) {
+        token.id = user.id;
+      }
+      return token;
+    },
+  },
 };
 
 const handler = NextAuth(authOptions);
