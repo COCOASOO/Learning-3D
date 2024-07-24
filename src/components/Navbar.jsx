@@ -10,9 +10,16 @@ export default function Navbar({ session }) {
   return (
     <nav className="bg-zinc-950 text-white px-6 md:px-24">
       <div className="flex justify-between items-center h-16">
-        <h1 className="text-xl font-bold">
-          <Link href="/">ytRatings</Link>
-        </h1>
+        <div className="flex items-center gap-x-4">
+          <h1 className="text-xl font-bold">
+            <Link href="/">ytRatings</Link>
+          </h1>
+          <ul className="hidden md:flex gap-x-4">
+            <li>
+              <Link href="/game" className="block px-4 py-2 md:p-0">Trending</Link>
+            </li>
+          </ul>
+        </div>
         <div className="md:hidden">
           <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
             <FaBars />
@@ -43,6 +50,12 @@ export default function Navbar({ session }) {
       {isMenuOpen && (
         <div className="md:hidden">
           <ul className="flex flex-col gap-y-2 mt-2">
+            <li>
+              <Link href="/" className="block px-4 py-2">Home</Link>
+            </li>
+            <li>
+              <Link href="/about" className="block px-4 py-2">About Us</Link>
+            </li>
             {!session?.user ? (
               <>
                 <li>
