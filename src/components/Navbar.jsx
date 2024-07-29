@@ -1,4 +1,5 @@
-"use client";
+'use client'
+import '@/styles/navbar.css';
 import { useState } from "react";
 import Link from "next/link";
 import { FaBars } from "react-icons/fa";
@@ -8,7 +9,7 @@ export default function Navbar({ session }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-zinc-950 text-white px-6 md:px-24">
+    <nav className="navbar-blur text-white px-6 md:px-24 fixed w-full z-10 top-0">
       <div className="flex justify-between items-center h-16">
         <div className="flex items-center gap-x-4">
           <h1 className="text-xl font-bold">
@@ -16,7 +17,7 @@ export default function Navbar({ session }) {
           </h1>
           <ul className="hidden md:flex gap-x-4">
             <li>
-              <Link href="/game" className="block px-4 py-2 md:p-0">Trending</Link>
+              <Link href="/list" className="block px-4 py-2 md:p-0 hover:underline">List</Link>
             </li>
           </ul>
         </div>
@@ -29,19 +30,19 @@ export default function Navbar({ session }) {
           {!session?.user ? (
             <>
               <li>
-                <Link href="/auth/login" className="block px-4 py-2 md:p-0">Login</Link>
+                <Link href="/auth/login" className="block px-4 py-2 md:p-0 hover:underline">Login</Link>
               </li>
               <li>
-                <Link href="/auth/register" className="block px-4 py-2 md:p-0">Register</Link>
+                <Link href="/auth/register" className="block px-4 py-2 md:p-0 hover:underline">Register</Link>
               </li>
             </>
           ) : (
             <>
               <li>
-                <Link href="/profile" className="block px-4 py-2 md:p-0">Profile</Link>
+                <Link href="/profile" className="block px-4 py-2 md:p-0 hover:underline">Profile</Link>
               </li>
               <li>
-                <LogoutButton className="block px-4 py-2 md:p-0" />
+                <LogoutButton className="block px-4 py-2 md:p-0 hover:underline" />
               </li>
             </>
           )}
@@ -49,29 +50,29 @@ export default function Navbar({ session }) {
       </div>
       {isMenuOpen && (
         <div className="md:hidden">
-          <ul className="flex flex-col gap-y-2 mt-2">
+          <ul className="flex flex-col gap-y-2 mt-2 bg-zinc-950 text-white p-4 rounded-lg">
             <li>
-              <Link href="/" className="block px-4 py-2">Home</Link>
+              <Link href="/" className="block px-4 py-2 hover:underline">Home</Link>
             </li>
             <li>
-              <Link href="/about" className="block px-4 py-2">About Us</Link>
+              <Link href="/about" className="block px-4 py-2 hover:underline">About Us</Link>
             </li>
             {!session?.user ? (
               <>
                 <li>
-                  <Link href="/auth/login" className="block px-4 py-2">Login</Link>
+                  <Link href="/auth/login" className="block px-4 py-2 hover:underline">Login</Link>
                 </li>
                 <li>
-                  <Link href="/auth/register" className="block px-4 py-2">Register</Link>
+                  <Link href="/auth/register" className="block px-4 py-2 hover:underline">Register</Link>
                 </li>
               </>
             ) : (
               <>
                 <li>
-                  <Link href="/profile" className="block px-4 py-2">Profile</Link>
+                  <Link href="/profile" className="block px-4 py-2 hover:underline">Profile</Link>
                 </li>
                 <li>
-                  <LogoutButton className="block px-4 py-2" />
+                  <LogoutButton className="block px-4 py-2 hover:underline" />
                 </li>
               </>
             )}

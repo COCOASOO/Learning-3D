@@ -1,8 +1,9 @@
 import { Inter } from "next/font/google";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { Theme } from "@radix-ui/themes";
 import Navbar from "@/components/Navbar";
-import "./globals.css"; 
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,8 +18,10 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Navbar session={session} />
-        {children}
+        <Theme>
+          <Navbar session={session} />
+          {children}
+        </Theme>
       </body>
     </html>
   );

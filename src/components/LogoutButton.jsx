@@ -4,7 +4,7 @@ import { signOut } from "next-auth/react";
 export default function LogoutButton({ className }) {
   return (
     <button
-      className={`bg-black text-white px-4 py-2 rounded-md ${className}`}
+      className={`text-white ${className} hover:underline`}
       onClick={() => signOut()}
     >
       Logout
