@@ -17,7 +17,7 @@ export default function Navbar({ session }) {
           </h1>
           <ul className="hidden md:flex gap-x-4">
             <li>
-              <Link href="/list" className="block px-4 py-2 md:p-0 hover:underline">List</Link>
+              <Link href="/about" className="block px-4 py-2 md:p-0 hover:underline">About Us</Link>
             </li>
           </ul>
         </div>
@@ -50,10 +50,7 @@ export default function Navbar({ session }) {
       </div>
       {isMenuOpen && (
         <div className="md:hidden">
-          <ul className="flex flex-col gap-y-2 mt-2 bg-zinc-950 text-white p-4 rounded-lg">
-            <li>
-              <Link href="/" className="block px-4 py-2 hover:underline">Home</Link>
-            </li>
+          <ul className="flex flex-col gap-y-2 mt-2 bg-zinc-950 text-white p-4 rounded-lg mb-8">
             <li>
               <Link href="/about" className="block px-4 py-2 hover:underline">About Us</Link>
             </li>

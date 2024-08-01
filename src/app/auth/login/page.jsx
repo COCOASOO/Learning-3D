@@ -42,7 +42,7 @@ export default function Login() {
 
   return (
     <div className="min-h-screen h-screen overflow-hidden flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full mx-4">
+      <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full mx-4 mt-16 md:mt-0">
         <h1 className="text-gray-800 font-bold text-3xl mb-4 text-center">
           Login
         </h1>
