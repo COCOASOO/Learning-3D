@@ -41,9 +41,9 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen h-screen overflow-hidden flex items-center justify-center bg-gray-100">
+    <div className="min-h-screen h-screen overflow-hidden flex items-center justify-center bg-gradient-to-r from-purple-500 to-indigo-500">
       <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full mx-4 mt-16 md:mt-0">
-        <h1 className="text-gray-800 font-bold text-3xl mb-4 text-center">
+        <h1 className="text-purple-800 font-bold text-3xl mb-4 text-center">
           Login
         </h1>
         {error && (
@@ -52,7 +52,7 @@ export default function Login() {
           </p>
         )}
         <form onSubmit={onSubmit}>
-          <label htmlFor="email" className="text-gray-600 mb-2 block">
+          <label htmlFor="email" className="text-purple-600 mb-2 block">
             Email:
           </label>
           <input
@@ -63,14 +63,14 @@ export default function Login() {
                 message: "Email is required",
               },
             })}
-            className="p-3 rounded block mb-4 bg-gray-200 text-gray-800 w-full"
+            className="p-3 rounded block mb-4 bg-purple-100 text-purple-800 w-full"
             placeholder="mail@example.com"
           />
           {errors.email && (
             <span className="text-red-500">{errors.email.message}</span>
           )}
 
-          <label htmlFor="password" className="text-gray-600 mb-2 block">
+          <label htmlFor="password" className="text-purple-600 mb-2 block">
             Password:
           </label>
           <input
@@ -81,33 +81,33 @@ export default function Login() {
                 message: "Password is required",
               },
             })}
-            className="p-3 rounded block mb-4 bg-gray-200 text-gray-800 w-full"
+            className="p-3 rounded block mb-4 bg-purple-100 text-purple-800 w-full"
             placeholder="Enter your password"
           />
           {errors.password && (
             <span className="text-red-500">{errors.password.message}</span>
           )}
 
-          <button className="w-full bg-black hover:bg-gray-800 p-3 rounded-lg text-white mt-2 transition-colors">
+          <button className="w-full bg-purple-600 hover:bg-purple-700 p-3 rounded-lg text-white mt-2 transition-colors">
             Sign in
           </button>
           <div className="flex items-center my-4">
             <div className="flex-grow h-px bg-gray-400"></div>
-            <span className="flex-shrink mx-4 text-gray-600">or</span>
+            <span className="flex-shrink mx-4 text-purple-600">or</span>
             <div className="flex-grow h-px bg-gray-400"></div>
           </div>
           <button
             type="button"
             onClick={handleGoogleSignIn}
-            className="w-full bg-black hover:bg-gray-800 p-3 rounded-lg text-white mt-2 flex items-center justify-center transition-colors"
+            className="w-full bg-purple-600 hover:bg-purple-700 p-3 rounded-lg text-white mt-2 flex items-center justify-center transition-colors"
           >
             <FaGoogle className="mr-2" />
             Sign in with Google
           </button>
         </form>
-        <p className="text-center text-gray-600 mt-4">
+        <p className="text-center text-purple-600 mt-4">
           If you don&apos;t have an account, please{" "}
-          <Link href="/auth/register" className="text-blue-500">
+          <Link href="/auth/register" className="text-indigo-400 hover:text-indigo-500 transition-colors">
             Sign up
           </Link>
         </p>
